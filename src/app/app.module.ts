@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { TenantComponentComponent } from './tenant-component/tenant-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TenantComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +20,7 @@ import { ApiService } from './api.service';
     HttpClientModule,
   ],
   providers: [ApiService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,TenantComponentComponent]
   
 })
 export class AppModule { }

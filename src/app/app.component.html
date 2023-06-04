@@ -1,16 +1,3 @@
 <div>
-  <h1>Hello</h1>
-
-  <form #f="ngForm">
-    <select name="state" [(ngModel)]="form.value.state">
-      <option value="" disabled>Choose a state</option>
-      <option *ngFor="let state of states" [ngValue]="state">
-        {{ state.abbrev }}
-      </option>
-    </select>
-  </form>
-
-  <p>Form value: {{ f.value | json }}</p>
-  <button (click)="fetchData()">Fetch data</button>
+  <app-tenant-component></app-tenant-component>
 </div>
-
