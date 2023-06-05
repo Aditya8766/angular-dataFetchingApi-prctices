@@ -1,9 +1,8 @@
+<h1>This is tenant component</h1>
 <div>
-    <h2>Hello</h2>
-  
     <form #f="ngForm">
-      <select name="state" [(ngModel)]="form.value.state">
-        <option value="" disabled>Choose a state</option>
+      <select name="state" [(ngModel)]="form.value.state" (change)="handleStateChange()">
+        <option value="null" disabled="true">Choose a state</option>
         <option *ngFor="let state of states" [ngValue]="state">
           {{ state.abbrev }}
         </option>
@@ -11,7 +10,6 @@
     </form>
   
     <p>Form value: {{ f.value | json }}</p>
-    <button (click)="fetchData()">Fetch data</button>
+    <button>Fetch data</button>
+    <button *ngIf="form.value.state" (click)="continue()">Continue</button>
   </div>
-  
-  

@@ -7,11 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { TenantComponentComponent } from './tenant-component/tenant-component.component';
+import { ComponentNameComponent } from './component-name/component-name.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TenantComponentComponent
+    TenantComponentComponent,
+    ComponentNameComponent
   ],
   imports: [
     BrowserModule,

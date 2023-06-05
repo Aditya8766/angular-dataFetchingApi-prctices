@@ -21,7 +21,8 @@ export class TenantComponentComponent {
 
   constructor(private apiService: ApiService) {}
 
-  fetchData(): void {
+  continue(): void { }
+  handleStateChange(): void {
     const selectedState = this.form.value.state;
 
     if (selectedState) {
@@ -31,8 +32,12 @@ export class TenantComponentComponent {
       const queryParams = { options: selectedState.abbrev };
       const queryString = new URLSearchParams(queryParams).toString();
       const googleUrl = `https://www.google.com?${queryString}`;
-      window.location.href = googleUrl;
+      window.open(googleUrl);
     }
+  }
+
+  fetchData(): void {
+   
 
     this.apiService.fetchData().subscribe({
       next: (response: any) => {
